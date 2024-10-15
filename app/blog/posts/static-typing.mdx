@@ -1,52 +1,29 @@
 ---
-title: 'The Power of Static Typing in Programming'
-publishedAt: '2024-04-07'
-summary: 'In the ever-evolving landscape of software development, the debate between dynamic and static typing continues to be a hot topic.'
+title: 'Buillt Docs: My Journey of Building a Collaborative Tool'
+publishedAt: '2024-10-05'
+summary: 'Buillt Docs is not just an app, it’s a reflection of our journey in building seamless, real-time collaboration using Liveblocks technology. This is a personal take on why this project matters.'
 ---
 
-In the ever-evolving landscape of software development, the debate between dynamic and static typing continues to be a hot topic. While dynamic typing offers flexibility and rapid development, static typing brings its own set of powerful advantages that can significantly improve the quality and maintainability of code. In this post, we'll explore why static typing is crucial for developers, accompanied by practical examples through markdown code snippets.
+Creating **Buillt Docs** has been a unique and personal journey for me. What started as an idea to solve a familiar problem—messy, unorganized document collaboration—has grown into a full-fledged project that I’m incredibly passionate about. The goal of Buillt Docs is simple: to make real-time collaboration easier, faster, and more intuitive for teams. But the journey to get here has been anything but simple.
 
-## Improved Code Quality and Safety
+## Why I Built Buillt Docs
 
-One of the most compelling reasons to use static typing is the improvement it brings to code quality and safety. By enforcing type checks at compile time, static typing catches errors early in the development process, reducing the chances of runtime errors.
+Like many developers, I’ve dealt with the frustrations of trying to collaborate on documents with others. Version control becomes a nightmare, and even with cloud-based solutions, the process often felt fragmented. I wanted to build something that could streamline this process—an app that would let users **edit documents together in real time**, with no lag and no confusion about who’s editing what. That’s when **Buillt Docs** was born.
 
-```ts
-function greet(name: string): string {
-  return `Hello, ${name}!`
-}
+## Liveblocks: The Magic Behind Real-Time Collaboration
 
-// This will throw an error at compile time, preventing potential runtime issues.
-let message: string = greet(123)
-```
+To make Buillt Docs truly live, we turned to **Liveblocks**, a technology designed for real-time collaborative experiences. It’s what powers the **live text editing** and **presence indicators** in Buillt Docs, ensuring that teams can work together as though they were in the same room, even if they’re miles apart.
 
-## Enhanced Readability and Maintainability
+What drew me to Liveblocks was its ability to make something so complex—real-time synchronization—look and feel seamless. The first time I saw live cursors moving across the screen as we edited a document together, I knew we were onto something special.
 
-Static typing makes code more readable and maintainable. By explicitly declaring types, developers provide a clear contract of what the code does, making it easier for others (or themselves in the future) to understand and modify the codebase.
+## The Journey of Building Buillt Docs
 
-## Facilitates Tooling and Refactoring
+Building Buillt Docs hasn’t been without its challenges. As we’re still in the process of developing both the **site** and the **app**, we’re constantly learning and improving. From fine-tuning the user experience to ironing out synchronization issues, every step has been a lesson in **app design and development**.
 
-Modern IDEs leverage static typing to offer advanced features like code completion, refactoring, and static analysis. These tools can automatically detect issues, suggest fixes, and safely refactor code, enhancing developer productivity and reducing the likelihood of introducing bugs during refactoring.
+This project is deeply personal for me. It’s not just about solving a problem I’ve faced; it’s about **creating something that I believe will make collaboration better for everyone**. Every day brings new challenges, but also new solutions, and that’s what makes this journey so rewarding.
 
-```csharp
-// Refactoring example: Renaming a method in C#
-public class Calculator {
-    public int Add(int a, int b) {
-        return a + b;
-    }
-}
+## Looking Ahead
 
-// After refactoring `Add` to `Sum`, all references are automatically updated.
-public class Calculator {
-    public int Sum(int a, int b) {
-        return a + b;
-    }
-}
-```
+Right now, Buillt Docs is still a work in progress, but I’m excited about what’s to come. As we continue developing it, I’m confident that Buillt Docs will become a tool that teams everywhere can rely on to collaborate effortlessly. This project represents our team’s passion for pushing boundaries and building digital tools that truly make a difference.
 
-## Performance Optimizations
-
-Static typing can lead to better performance. Since types are known at compile time, compilers can optimize the generated code more effectively. This can result in faster execution times and lower resource consumption.
-
-## Conclusion
-
-Static typing offers numerous benefits that contribute to the development of robust, efficient, and maintainable software. By catching errors early, enhancing readability, facilitating tooling, and enabling optimizations, static typing is an invaluable asset for developers. As the software industry continues to mature, the importance of static typing in ensuring code quality and performance cannot be overstated. Whether you're working on a large-scale enterprise application or a small project, embracing static typing can lead to better software development outcomes.
+This journey is far from over, but I can’t wait to share Buillt Docs with the world.

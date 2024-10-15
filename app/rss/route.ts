@@ -29,7 +29,7 @@ export async function GET() {
     <channel>
         <title>My Portfolio</title>
         <link>${baseUrl}</link>
-        <description>This is my portfolio RSS feed</description>
+        <description>This is my RSS feed</description>
         ${itemsXml}
     </channel>
   </rss>`

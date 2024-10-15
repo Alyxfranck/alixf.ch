@@ -148,3 +148,11 @@ table {
 .title {
   text-wrap: balance;
 }
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensures canvas stays behind the rest of the content */
+}
