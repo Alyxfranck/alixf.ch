@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import p5 from 'p5';
 
-const MandelbulbSketch = () => {
+export default function MandelbulbSketch() {
   useEffect(() => {
     const sketch = (p) => {
       let DIM = 3;
@@ -108,6 +108,4 @@ const MandelbulbSketch = () => {
   }, []);
 
   return <div></div>;
-};
-
-export default MandelbulbSketch;
+}
