@@ -1,4 +1,4 @@
-# My Portfolio 
+# My minimal Portfolio 
 
 - MDX and Markdown support
 - Optimized for SEO (sitemap, robots, JSON-LD schema)
