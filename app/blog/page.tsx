@@ -1,4 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
+import MandelbulbSketch from 'app/components/MandelbulbSketch';
 
 export const metadata = {
   title: 'Blog',
