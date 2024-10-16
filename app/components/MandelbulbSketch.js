@@ -84,7 +84,7 @@ export default function MandelbulbSketch() {
             p.draw = () => {
               p.background(0);
               p.strokeWeight(0.1);
-              p.stroke(100);
+              p.stroke(150);
               p.noFill();
               p.rotateX(p.HALF_PI); // Rotate to make the Mandelbulb stand upright
               p.rotateZ(p.frameCount * 0.002); // Add rotation around the Z-axis
