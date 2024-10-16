@@ -1,0 +1,50 @@
+---
+title: 'The Mandelbulb'
+publishedAt: '2024-05-04'
+summary: 'Dive into my journey of writing pseudocode for the Mandelbulb fractal, inspired by the beauty of mathematics and the complexity of code. Learn how this project shaped my understanding of 3D fractals.'
+---
+
+When I first heard about the **Mandelbulb**, I was instantly captivated. It's a 3D extension of the Mandelbrot set, and its intricate structures seemed to defy logic. Naturally, I was drawn to the idea of translating this abstract mathematical beauty into code. As a developer, there’s something magical about turning a concept rooted in mathematics into a visual, interactive experience. 
+
+In my project, hosted on GitHub at **[Mushroom](https://github.com/Alyxfranck/Mushroom)**, I’ve been working on the pseudocode for rendering the Mandelbulb fractal. This is where my journey began, transforming mathematical theory into something tangible.
+
+## Understanding the Mandelbulb
+
+The **Mandelbulb** is a fractal, but unlike its 2D cousin, the Mandelbrot set, this one lives in 3D. The challenge lies in calculating and rendering the fractal in a 3D space, which required me to dig into **complex numbers** and **iterative functions**.
+
+The formula for the Mandelbulb is relatively simple: take a point in 3D space, apply an iterative function similar to the Mandelbrot set, and determine whether it "escapes" or stays bounded. If it escapes, it belongs to the fractal. If not, it doesn’t. While simple in concept, the magic happens in the complexity of repeating these iterations over thousands of points.
+
+## Writing the Pseudocode
+
+The pseudocode for rendering the Mandelbulb was not just about logic; it was an exercise in understanding **performance**, **precision**, and **creativity**. My pseudocode essentially follows these steps:
+
+1. **Initialize the 3D space**: Start by selecting a grid of points in 3D space where each point is initialized with x, y, and z coordinates.
+2. **Iterative Function**: For each point, apply the Mandelbulb formula through several iterations, checking whether the point escapes or remains bounded. This involves working with powers and angles (via spherical coordinates).
+3. **Color Mapping**: Assign colors based on the number of iterations each point takes to escape. This is where art meets math—the colors give the fractal its striking, otherworldly appearance.
+4. **Render**: Finally, output the points in 3D space that form the Mandelbulb, visualized as an intricate, organic structure.
+
+Here’s a simplified pseudocode version:
+
+```text
+for each point (x, y, z) in 3D space:
+    set iteration_count = 0
+    while point not escaped and iteration_count < max_iterations:
+        apply Mandelbulb formula to (x, y, z)
+        if point escapes:
+            color based on iteration_count
+        iteration_count += 1
+```
+The full implementation involved optimizing the calculations, especially for complex numbers and rotations in 3D, to avoid performance bottlenecks.
+
+## The Challenges
+
+One of the biggest hurdles was making the code efficient enough to render the Mandelbulb in a reasonable time. As with most fractal-related projects, the number of iterations quickly becomes a performance bottleneck. Optimizing loops and using better data structures were key to ensuring the rendering didn’t take forever. I had to think carefully about the balance between rendering detail and computational cost, which shaped a lot of my decisions in the pseudocode.
+
+## Lessons Learned
+
+This project has taught me a lot—not just about fractals and mathematics, but also about the power of pseudocode in translating abstract ideas into something real. Writing pseudocode was a great exercise in structuring my thoughts before diving into actual code. It’s a habit I’ll carry forward into future projects.
+
+The Mandelbulb is more than just a fractal; it’s a reminder of the beauty that lies at the intersection of math, art, and code. Through this journey, I’ve learned to appreciate the complexity of simple formulas and the elegance of iterative structures. It’s projects like these that remind me why I love coding in the first place.
+
+Check out the full project on GitHub **[Mushroom](https://github.com/Alyxfranck/Mushroom)** for a deeper dive into the code and the rendering process.
+

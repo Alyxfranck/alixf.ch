@@ -17,9 +17,9 @@ export default function MandelbulbSketch() {
             // Sketch code starts here
             let DIM = 10;
             let maxiterations = 3;
-            let targetDIM = 180;
+            let targetDIM = 170;
             let targetMaxIterations = 10;
-            let transitionSpeed =   0.4;
+            let transitionSpeed =   1;
             let mandelbulb = [];
             let transitioning = true;
 
@@ -43,7 +43,7 @@ export default function MandelbulbSketch() {
                     let y = p.map(j, 0, DIM, -2, 2);
                     let z = p.map(k, 0, DIM, -2, 2);
                     let zeta = p.createVector(0, 0, 0);
-                    let n = 2; // You can adjust the power for different shapes
+                    let n = 2.5; // You can adjust the power for different shapes
                     let iteration =3;
                     while (true) {
                       let c = spherical(zeta.x, zeta.y, zeta.z);
@@ -86,7 +86,7 @@ export default function MandelbulbSketch() {
               p.strokeWeight(0.1);
               p.stroke(100);
               p.noFill();
-              p.rotateX(-p.HALF_PI); // Rotate to make the Mandelbulb stand upright
+              p.rotateX(p.HALF_PI); // Rotate to make the Mandelbulb stand upright
               p.rotateZ(p.frameCount * 0.002); // Add rotation around the Z-axis
               p.beginShape(p.POINTS);
               for (let v of mandelbulb) {
