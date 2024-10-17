@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Hello, I am /\ [ | &#123; &#125; Franck
+        Hello, I am /\ [ | &#125; &#123; Franck
       </h1>
       <p className="mb-4">
         I’m a developer blending creativity with efficiency. As co-founder of{' '}
