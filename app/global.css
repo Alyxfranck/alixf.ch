@@ -12,7 +12,7 @@
   --sh-string: #007f7a;
   --sh-keyword: #e02518;
   --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
+  --sh-jsxliterals: #6266d1;  
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
 }
@@ -149,10 +149,77 @@ table {
   text-wrap: balance;
 }
 
-
 canvas {
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1; /* Ensures canvas stays behind the rest of the content */
+}
+
+.wiki-summary-card {
+ 
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.wiki-summary-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.wiki-summary-card p {
+  font-size: 1em;
+  color: #666;
+}
+.wiki-summary-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.wiki-summary-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #e0e0e000;
+  border-radius: 8px;
+  background-color: #f9f9f900;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton {
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
+.skeleton-thumbnail {
+  width: 100%;
+  height: 150px;
+  background-color: #e0e0e000;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 24px;
+  background-color: #e0e0e000;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-extract {
+  width: 100%;
+  height: 48px;
+  background-color: #e0e0e010;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e000;
+  }
+  50% {
+    background-color: #f0f0f00e;
+  }
+  100% {
+    background-color: #e0e0e01e;
+  }
 }

@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react';
 
-export default function MandelbulbSketch() {
+export default function MandelbulbSketchone() {
   useEffect(() => {
     let p5Instance;
 
@@ -17,7 +17,7 @@ export default function MandelbulbSketch() {
             // Sketch code starts here
             let DIM = 10;
             let maxiterations = 3;
-            let targetDIM = 175;
+            let targetDIM = 255;
             let targetMaxIterations = 10;
             let transitionSpeed =   1;
             let mandelbulb = [];
@@ -82,9 +82,9 @@ export default function MandelbulbSketch() {
             }
 
             p.draw = () => {
-              p.background(50, 0.6);
+              p.background(50,0.4);
               p.strokeWeight(0.1);
-              p.stroke(120);
+              p.stroke(0);
               p.noFill();
               p.rotateX(p.HALF_PI); // Rotate to make the Mandelbulb stand upright
               p.rotateZ(p.frameCount * 0.002); // Add rotation around the Z-axis
