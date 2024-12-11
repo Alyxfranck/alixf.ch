@@ -14,7 +14,7 @@ const ProjectsPage: React.FC = () => {
         <a href="/wiki" className="text- hover:underline">➔ Wikireels</a> 
       </h2>
       <h2 className="mb-4">
-        <a href="" className="text- hover:underline">➔ Buillt-docs</a> 
+        <a href="https://buillt-docs.vercel.app/" className="text- hover:underline">➔ Buillt-docs</a> 
       </h2>
     </section>
   );

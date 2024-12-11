@@ -17,7 +17,7 @@ export default function MandelbulbSketchone() {
             // Sketch code starts here
             let DIM = 10;
             let maxiterations = 3;
-            let targetDIM = 255;
+            let targetDIM = 200;
             let targetMaxIterations = 10;
             let transitionSpeed =   1;
             let mandelbulb = [];

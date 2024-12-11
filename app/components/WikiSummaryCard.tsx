@@ -53,7 +53,7 @@ const WikiFeed: React.FC = () => {
   const handleScroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight - 200
+      document.documentElement.offsetHeight - 100
     ) {
       setPage((prevPage) => prevPage + 1); // Trigger loading new articles
     }
@@ -76,7 +76,7 @@ const WikiFeed: React.FC = () => {
   return (
     <div className="wiki-feed">
       {articles.map((article, index) => (
-        <div key={index} className="wiki-summary-card">
+        <div key={index} className={`wiki-summary-card ${loading ? "" : "loaded"}`}>
           {article.thumbnail && (
             <img
               src={article.thumbnail.source}
@@ -95,8 +95,11 @@ const WikiFeed: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 Read more
-              </a>
+                </a>
+              <a>
               <button onClick={() => toggleExpand(index)}>Less</button>
+              </a>
+              
             </>
           ) : (
             <p>{article.extract.substring(0, 95)}... <button onClick={() => toggleExpand(index)}>More</button></p>
