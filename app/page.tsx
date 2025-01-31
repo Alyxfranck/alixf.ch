@@ -1,4 +1,4 @@
-import MandelbulbSketch from 'app/components/MandelbulbSketch';
+import MandelbulbSketch from 'app/components/bg-bulb/MandelbulbSketch';
 
 export default function Page() {
   return (
@@ -11,9 +11,6 @@ export default function Page() {
         I am passionate about creating interactive and engaging experiences on the web.
         I am currently working on a few projects that I am excited to share with you.
       </p>
-      <div className="my-8">
-        <MandelbulbSketch />
-      </div>
     </section>
   );
 }

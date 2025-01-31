@@ -1,111 +1,82 @@
 ---
 title: 'The Mandelbulb Documentation'
-publishedAt: '2024-02-23'
+publishedAt: '2024-01-10'
 summary: 'Comprehensive documentation of a Flask web application that serves multiple pages and a mushroom growth simulation influenced by real-time weather data.'
 ---
 
+<div className="flex space-x-4">
+  <a className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+    href="https://github.com/Alyxfranck/Mushroom"
+    target="_blank">
+    <ArrowIcon />
+    <span className="ml-2 h-7">Code</span>
+  </a>
+  <a className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+    href="/Bulbs"
+    target="_blank">
+    <ArrowIcon />
+    <span className="ml-2 h-7">Example</span>
+  </a>
+</div>
 ## Overview
-This project consists of a Flask-based web application that serves multiple pages and dynamically updates JavaScript files. It also integrates a secondary script responsible for simulating mushroom growth based on weather conditions obtained from an external API. 
+This project consists of a Flask-based web application that serves multiple pages and dynamically updates JavaScript files. It also integrates a secondary script responsible for simulating mushroom growth based on weather conditions obtained from an external API.
 
 ## Directory Structure
 ```
 root/
 app.py              # Main Flask application
-main.py            # Mushroom growth and weather integration script
-static/             # Static files JS, that are updated by the API
+main.py             # Mushroom growth and weather integration script
+static/             # Static JS files updated by the API
 templates/          # HTML templates for rendering pages
 config.cfg          # Configuration file for weather API and locations
-data/               # Stores output JSON data from mushroom simulation 
+data/               # Stores output JSON data from mushroom simulation
 ```
 
 ## Flask Web Application (`app.py`)
-### Purpose
 - Hosts a web server using Flask.
 - Serves multiple pages through different routes.
 - Provides an endpoint for updating JavaScript files dynamically.
 - Runs `main.py` in a separate thread.
 
-### Endpoints 
-- **`/master`** → `GET` → Renders `.html` Files.
-
+## Endpoints
+- **`/master`** → `GET` → Renders `.html` files.
 - **`/update-js`** → `POST` → Updates JavaScript file with new `n` value.
 
-
-### JavaScript Update Logic
+## JavaScript Update Logic
 - Reads the requested JavaScript file from the `static/` folder.
-- Finds and modifies the `let n =` variable in the file using regex.
+- Finds and modifies the `let n =` variable in the file using regex, based on the weather data.
 - Saves the updated file.
 
 ## Mushroom Growth Simulation (`main.py`)
-### Purpose
 - Simulates mushroom growth over time, adjusting factors based on real-time weather data.
 - Uses OpenWeatherMap API to fetch temperature, humidity, cloud cover, wind speed, and rain data.
 - Assigns color hex values to mushrooms based on size.
 - Periodically exports mushroom data to `data/data.json`.
 
-### Key Classes & Functions
-#### `Mushroom` Class
-- Properties: `name`, `location`, `id`, `age`, `size`, `growth_factor`, `color`, `dead`.
-- Methods:
-  - `update()`: Adjusts size and age based on growth factors.
+#### Mushroom Class
+**Properties:** `name`, `location`, `id`, `age`, `size`, `growth_factor`, `color`, `dead`.
 
-#### `apply_weather(mushroom, weather_data)`
+**Methods:**
+- `update()`: Adjusts size and age based on growth factors.
+
+#### apply_weather(mushroom, weather_data)
 - Adjusts growth factors based on weather conditions:
-  - Temperature, Humidity, Cloud Cover, Wind Speed, and Rain
-  - Uses nonlinear interactions between these factors
-  - Assigns a color hex code based on size
+- Temperature, humidity, cloud cover, wind speed, and rain.
+- Uses nonlinear interactions between these factors.
+- Assigns a color hex code based on size.
 
-#### `get_weather(api_key, location)`
-- Fetches weather data for a given location from OpenWeatherMap.
-
-#### `generate_color_hex(size)`
+#### generate_color_hex(size)
 - Generates a random hex color based on mushroom size.
 
-#### `export_mushroom_data(mushrooms, file_path)`
+#### export_mushroom_data(mushrooms, file_path)
 - Saves mushroom data to a JSON file periodically.
 
-## Execution Flow
-### 1. Running `app.py`
-- Starts the Flask server.
-- Serves HTML pages.
-- Listens for JavaScript updates.
-
-### 2. Running `main.py`
-- Loads API key and location data from `config.cfg`.
-- Initializes multiple `Mushroom` objects.
-- Fetches weather data periodically.
-- Updates mushroom growth based on weather conditions.
-- Saves mushroom data to `data/data.json`.
-- Runs indefinitely with a `time.sleep(10)` interval.
-
-## Configuration (`config.cfg`)
-- Stores the API key for OpenWeatherMap.
-- Defines geographic coordinates for different locations.
-
-Example:
-```
-[WEATHER]
-API_KEY = your_api_key_here
-LAT_1 = 40.7128
-LON_1 = -74.0060
-LAT_2 = 35.6895
-LON_2 = 139.6917
-```
-
-## Mandelbulb Visualization (mandelbulb.js)
-
-## Purpose
-
+## Mandelbulb Visualization 
 - Generates a 3D Mandelbulb fractal using WebGL.
-
 - Dynamically adjusts based on input parameters.
-
 - Implements smooth transitions between different fractal resolutions.
 
-## Mandelbulb Visualisation 
-
-### Global Variables:
-
+#### Global Variables
 - `DIM`: The initial grid size (low resolution).
 - `maxiterations`: Maximum iterations for determining escape.
 - `targetDIM, targetMaxIterations`: The goal values for resolution transition.
@@ -113,15 +84,14 @@ LON_2 = 139.6917
 - `mandelbulb`: An array storing computed 3D fractal points.
 - `transitioning`: Boolean to track active transitions.
 
-### Fractal Calculation (calculateMandelbulb())
-
+#### Fractal Calculation (`calculateMandelbulb()`)
 - Iterates through a 3D grid.
 - Converts Cartesian coordinates (x, y, z) to spherical form.
-- Applies a power transformation to compute Mandelbulb structure.
-- Stores valid points inside mandelbulb array 
+- Applies a power transformation to compute the Mandelbulb structure.
+- Stores valid points inside the `mandelbulb` array.
 
-Example: 
-```
+#### Example
+```javascript
 function calculateMandelbulb(DIM, maxiterations) {
   mandelbulb = []; // Reset the array
   for (let i = 0; i < DIM; i++) {
@@ -131,7 +101,7 @@ function calculateMandelbulb(DIM, maxiterations) {
         let y = map(j, 0, DIM, -2, 2);     
         let z = map(k, 0, DIM, -2, 2);
         let zeta = createVector(0, 0, 0);
-        let n = 2.686883786067037; # value updated by the API
+        let n = 2.686883786067037; // Value updated by the API
         let iteration = 3;
         while (true) {
           let c = spherical(zeta.x, zeta.y, zeta.z);
@@ -153,9 +123,37 @@ function calculateMandelbulb(DIM, maxiterations) {
     }
   }
 }
-``` 
+```
+
+## Execution Flow
+#### 1. Running `app.py`
+- Starts the Flask server.
+- Serves HTML pages.
+- Listens for JavaScript updates.
+
+#### 2. Running `main.py`
+- Loads API key and location data from `config.cfg`.
+- Initializes multiple `Mushroom` objects.
+- Fetches weather data periodically.
+- Updates mushroom growth based on weather conditions.
+- Saves mushroom data to `data/data.json`.
+- Calls the /update-js endpoint to modify JavaScript values dynamically.
+- Runs indefinitely with a `time.sleep(10)` interval.
+
+### Configuration (`config.cfg`)
+- Stores the API key for OpenWeatherMap.
+- Defines geographic coordinates for different locations.
+
+#### Example
+```
+[WEATHER]
+API_KEY = your_api_key_here
+LAT_1 = 40.7128
+LON_1 = -74.0060
+LAT_2 = 35.6895
+LON_2 = 139.6917
+```
 
 ## Summary
-
-This project combines a Flask web application with a dynamic JavaScript updater, a weather-based mushroom growth simulation, and a Mandelbulb fractal visualization. The Flask app serves HTML pages, while main.py runs in the background, continuously fetching weather data and updating mushroom growth. Simultaneously, the Mandelbulb visualization dynamically evolves based on user-defined input, creating a seamless integration of real-time simulations within the web environment.
+This project combines a Flask web application with a dynamic JavaScript updater, a weather-based mushroom growth simulation, and a Mandelbulb fractal visualization. The Flask app serves HTML pages, while `main.py` runs in the background, continuously fetching weather data and updating mushroom growth. Simultaneously, the Mandelbulb visualization dynamically evolves based on user-defined input, creating a seamless integration of real-time simulations within the web environment.
 

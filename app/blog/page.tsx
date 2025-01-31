@@ -1,5 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
-import BlogSketch from '../components/BlogSketch';
+import BlogSketch from '../components/bg-bulb/BlogSketch';
 
 export const metadata = {
   title: 'Blog',

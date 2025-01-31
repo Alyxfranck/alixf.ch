@@ -36,72 +36,72 @@ export default function Page() {
         <li>Jan 2025 - Feb 2025: Military Service, Cyber Soilder, Switzerland (Put on Medical Leave)</li>
       </ul>
 
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Experience</h1>
-      <p className="mb-4">Sep 2024 - Jan 2025: Freelance Web Development</p>
+      <h2 className="text-2xl font-medium tracking-tight mt-6">Websites I made</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+      Aug 2024 - Now</p>
       <ul className="mb-10 space-y-4">
-       <li><a href="https://proxa-solutions.com" target="_blank">Proxa Solutions GmbH, Biel-Bienne, Switzerland</a></li>
-       <li><a href="https://www.r22-corporate-services.com" target="_blank">R22 Corporate Housekeeping GmbH, Ipsach, Switzerland</a></li>
+       <li><a href="https://proxa-solutions.com" target="_blank">Proxa Solutions GmbH, Switzerland</a></li>
+       <li><a href="https://www.r22-corporate-services.com" target="_blank">R22 Corporate Housekeeping GmbH, Switzerland</a></li>
        <li><a href="https://franckphysiofitness.ch" target="_blank">Franck Physio Fitness AG, Ipsach, Switzerland</a></li>
-       <li><a href="https://bites-catering.de" target="_blank">Bites Catering, Berlin, Germany</a></li>
-       <li><a href="https://evasion-sport.be" target="_blank">Evasion-Sport TM, Liege, Belgium</a></li>
+       <li>Bites Catering, Germany</li>
+       <li><a href="https://evasion-sport.be" target="_blank">Evasion-Sport TM, Belgium</a></li>
       </ul>
 
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter"> Projects </h1>
-      <p className="mb-4">Sep 2023: Matura Thesis Project, Grade 5.5/6</p>
-      <p className="mb-6">
+      <h1 className="text-2xl font-semibold tracking-tighter"> Projects</h1>
+
+
+      <h2 className="text-xl font-medium tracking-tight mt-6">Matura Thesis</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+      September, 2023</p>
+      <p className="mb-3">
        Binary Melodies: In this thesis, I used a Java dialect (Processing 4) to encrypt any text into an image.The goal was not to reinvent the wheel but to create an artistic form of encrypting text into an image. An actual way of decrypting the image back into text was not implemented in this project, but it leaves room for future development.
       </p>
-      <ul className="mb-8 space-y-4">
-        <li>
-          <a
-            className="flex items-center transition-all       hover:text-neutral-800 dark:hover:text-neutral-100"
-            href="https://github.com/Alyxfranck/ASCII-Images"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <span className="ml-2 h-7">Code</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className="flex items-center transition-all       hover:text-neutral-800 dark:hover:text-neutral-100"
-            href="/BinaryMelodies.pdf"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <span className="ml-2 h-7">Thesis</span>
-          </a>
-        </li>
-      </ul>
-      <p className="mb-4">Nov 2023 - Jan 2024: The Mandel Bulb, Grade 6/6</p>
-      <p className="mb-6"> 
+      <div className="flex space-x-4 mb-8">
+        <a className="inline-flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+          href="https://github.com/Alyxfranck/ASCII-Images"
+          target="_blank">
+          <ArrowIcon />
+          <span className="ml-2 h-7">Code</span>
+        </a>
+        <a className="inline-flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+          href="/BinaryMelodies.pdf"
+          target="_blank">
+          <ArrowIcon />
+          <span className="ml-2 h-7">Thesis</span>
+        </a>
+     </div>
+     <h2 className="text-xl font-medium tracking-tight mt-6 ">The Mandelbulb</h2>
+      <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+      January, 2024</p>
+      <p className="mb-3"> 
       In this project, my task was to realise the concept of the mushroom in the visual arts. As a result, I animated the Mandelbrot set in 3D and used it as a front end. With the help of live weather data (as a backend component), I made objects grow ‘organically’ like a mushroom. The project was essentioally a Flask application and used Three.js in the frontend.
       </p>
-      <ul className="mb-8 space-y-4">
-       <li>
-           <a
-             className="flex items-center transition-all       hover:text-neutral-800 dark:hover:text-neutral-100"
-             href="https://github.com/Alyxfranck/Mushroom"
-             target="_blank"
-           >
-             <ArrowIcon />
-             <span className="ml-2 h-7">Code</span>
-           </a>
-         </li>
-         <li>
-           <a
-             className="flex items-center transition-all       hover:text-neutral-800 dark:hover:text-neutral-100"
-             href="/docs/Mandelbulb-docs"
-             target="_blank"
-           >
-             <ArrowIcon />
-             <span className="ml-2 h-7">Docs</span>
-           </a>
-         </li>
-      </ul>  
-      <p className="mb-4"> Aug - Nov 2024: Data Mining</p>
+
+      <div className="flex space-x-4 mb-8">
+        <a className="inline-flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+          href="https://github.com/Alyxfranck/Mushroom"
+          target="_blank">
+          <ArrowIcon />
+          <span className="ml-2 h-7">Code</span>
+        </a>
+        <a className="inline-flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+          href="/docs/Mandelbulb-docs"
+          target="_blank">
+          <ArrowIcon />
+          <span className="ml-2 h-7">Docs</span>
+        </a>
+        <a className="inline-flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+          href="/Bulbs"
+          target="_blank">
+          <ArrowIcon />
+          <span className="ml-2 h-7">Example</span>
+        </a>
+     </div>
+     <h2 className="text-xl font-medium tracking-tight mt-6 ">Data Mining</h2>
+     <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+     November, 2024</p>
       <p className="mb-6"> 
-      In this project, I buillt a scraping api in python 
+      In this project, I used Python to extract and analyze data from the internet. The project was based on the BeautifulSoup and requests libraries. The goal was to build a robust and reliable data mining tool capable of gathering information based on a given XPath. The final product was a locally hosted API, containerized with Docker, that returned data in JSON format and could later convert it to a CSV file.
       </p>
     </section>
   );

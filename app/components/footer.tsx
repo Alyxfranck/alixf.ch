@@ -33,10 +33,10 @@
               className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.linkedin.com/in/alix-franck-351814273/"
+              href="/Resume"
             >
               <ArrowIcon />
-              <p className="ml-2 h-7">LinkedIn</p>
+              <p className="ml-2 h-7">CV</p>
             </a>
           </li>
           <li>

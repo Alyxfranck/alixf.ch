@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ArrowIcon from '../components/ArrowIcon'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
@@ -97,6 +98,7 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  ArrowIcon,
 }
 
 export function CustomMDX(props) {

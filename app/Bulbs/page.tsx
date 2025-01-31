@@ -1,4 +1,4 @@
-import MandelbulbSketchone from 'app/components/MandelbulbSketchone';
+import MandelbulbSketchone from 'app/components/bg-bulb/MandelbulbSketchone';
 export default function Page() {return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
