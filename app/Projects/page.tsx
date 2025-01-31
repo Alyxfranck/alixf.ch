@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import ProjectsSketch from '../components/ProjectsSketch';
+
 const ProjectsPage: React.FC = () => {
   return (
     <section>
@@ -16,6 +18,7 @@ const ProjectsPage: React.FC = () => {
       <h2 className="mb-4">
         <a href="https://buillt-docs.vercel.app/" className="text- hover:underline">➔ Buillt-docs</a> 
       </h2>
+      <ProjectsSketch/>
     </section>
   );
 }

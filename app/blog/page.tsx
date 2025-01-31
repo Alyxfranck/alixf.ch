@@ -1,5 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
-import MandelbulbSketch from 'app/components/MandelbulbSketch';
+import BlogSketch from '../components/BlogSketch';
 
 export const metadata = {
   title: 'Blog',
@@ -11,7 +11,7 @@ export default function Page() {
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Blog</h1>
      
-      <BlogPosts />
+      <BlogPosts/>
     </section>
   )
 }

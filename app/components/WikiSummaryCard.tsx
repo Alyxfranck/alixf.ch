@@ -17,9 +17,7 @@ interface WikiSummary {
 
 const SkeletonCard: React.FC = () => (
   <div className="wiki-summary-card skeleton">
-    <div className="skeleton-thumbnail" />
-    <div className="skeleton-title" />
-    <div className="skeleton-extract" />
+    <div className="skeleton-card" />
   </div>
 );
 
@@ -95,11 +93,7 @@ const WikiFeed: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 Read more
-                </a>
-              <a>
-              <button onClick={() => toggleExpand(index)}>Less</button>
               </a>
-              
             </>
           ) : (
             <p>{article.extract.substring(0, 95)}... <button onClick={() => toggleExpand(index)}>More</button></p>

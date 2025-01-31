@@ -7,9 +7,16 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/docs': {
+    name: 'Docs',
+  },
   '/Projects': {
     name: 'Projects',
   },
+  '/Resume': {
+    name: 'CV',
+  },
+  
 }
 
 export function Navbar() {
