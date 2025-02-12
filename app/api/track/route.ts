@@ -2,12 +2,24 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fetch from 'node-fetch';
 
-export default async function handler(req, res) {
+interface Data {
+  // Define the structure of the data object here
+}
+
+interface ErrorResponse {
+  message: string;
+  error?: string;
+}
+
+interface SuccessResponse {
+  status: string;
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<SuccessResponse | ErrorResponse>): Promise<void> {
   if (req.method === 'POST') {
     try {
-      const data = await req.json();
-
-      // Forward the data to the external application's API endpoint
+      const data: Data = req.body;
+      
       const externalResponse = await fetch('https://data-bucket.vercel.app/api/process', {
         method: 'POST',
         headers: {
@@ -22,7 +34,7 @@ export default async function handler(req, res) {
 
       res.status(200).json({ status: 'Tracked and forwarded successfully' });
     } catch (error) {
-      res.status(500).json({ message: 'Error processing data', error: error.message });
+      res.status(500).json({ message: 'Error processing data', error: (error as Error).message });
     }
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
