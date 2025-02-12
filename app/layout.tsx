@@ -6,6 +6,7 @@ import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
+import Tracker from './components/tracker';
 import { baseUrl } from './sitemap'
 import MandelbulbSketch from './components/bg-bulb/MandelbulbSketch'
 
@@ -58,9 +59,10 @@ export default function RootLayout({
           <Navbar />
           
           {children}
-          <MandelbulbSketch/>
+          
           <Footer />
           <Analytics />
+          <Tracker />
           <SpeedInsights />
         </main>
       </body>

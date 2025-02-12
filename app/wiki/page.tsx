@@ -1,4 +1,5 @@
 import WikiFeed from "app/components/WikiSummaryCard";
+import WikipediaSearch from "app/components/WikipediaSearch";
 
 export default function Page() {
     return (
@@ -10,7 +11,7 @@ export default function Page() {
           This is a simple wiki feed that fetches articles from Wikipedia. Scroll down to load endless articles.
         </p>
         <div className="my-8">
-          <WikiFeed/>
+          <WikipediaSearch />
         </div>
       </section>
     );

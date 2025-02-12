@@ -1,0 +1,71 @@
+---
+title: 'Data Mining: Quickstart Guide'
+publishedAt: '2024-11-05'
+summary: 'Buillt Docs is not just an app, it’s a reflection of our journey in building seamless, real-time collaboration using Liveblocks technology. This is a personal take on why this project matters.'
+---
+
+import React from 'react';
+
+The methods explained in this article are based on scientific research and conducted under supervision and with caution regarding the terms of service of all mentioned applications.
+
+## Quickstart
+
+By looking at a website's `robots.txt` file, you can often identify a Sitemap.
+
+```plaintext
+https://quotes.com/robots.txt
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Sitemap: https://quotes.com/wp-sitemap.xml
+```
+
+By entering the Sitemap URL, we can examine a website's structure and its indexed pages. This helps search engine crawlers efficiently navigate and assign rankings to pages.
+
+By navigating through the Sitemap, we find a URL of interest:
+
+```plaintext
+https://quotes.com/wp-sitemap-posts-post-1.xml
+```
+
+This Sitemap contains a list of URLs that can be used for targeted data gathering.
+
+Depending on the tool used for this purpose, we can either extract information from the entire site or specify an XPath to retrieve specific elements.
+
+### What is XPath?
+
+XPath (XML Path Language) is a query language used for navigating and selecting nodes in an XML document. It allows us to extract precise data points from structured XML content, such as the URLs found in a Sitemap.
+
+For example, if we want to extract all `<loc>` elements (which contain URLs) from the XML file, we can use the following XPath query:
+
+```plaintext
+//urlset/url/loc/text()
+```
+
+### Extracting Data with XPath
+
+Using tools like Python’s `lxml` or `BeautifulSoup`, we can extract the relevant data:
+
+```python
+from lxml import etree
+import requests
+sitemap_url = "https://quotes.com/wp-sitemap-posts-post-1.xml"
+response = requests.get(sitemap_url)
+tree = etree.fromstring(response.content)
+urls = tree.xpath("//urlset/url/loc/text()")
+for url in urls:
+    print(url)
+```
+
+This script fetches the XML sitemap, parses it, and extracts all indexed URLs.
+
+### Next Steps
+
+Once we have gathered the URLs, we can proceed with further data mining techniques such as:
+
+- Scraping content from identified pages
+- Analyzing metadata (title, description, keywords)
+- Monitoring changes in webpage content over time
+
+By leveraging these methods, we can efficiently extract and analyze web data while adhering to ethical guidelines and legal considerations.
+
