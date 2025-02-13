@@ -1,23 +1,43 @@
 export function generateFingerprint(): string {
+    // Create a canvas element and draw text for canvas fingerprinting
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     if (ctx) {
-        ctx.textBaseline = "top";
-        ctx.font = "14px Arial";
-        ctx.fillText("User Fingerprint", 10, 50);
+      ctx.textBaseline = "top";
+      ctx.font = "14px Arial";
+      ctx.fillText("User Fingerprint", 10, 50);
     }
-    //document.cookie = `fingerprint; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT`;
-
-
-    return JSON.stringify({
-        userAgent: navigator.userAgent,
-        language: navigator.language,
-        screenResolution: `${window.screen.width}x${window.screen.height}`,
-        //canvasData: canvas.toDataURL(),
-        cpuCores: navigator.hardwareConcurrency || "Unknown",
-        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    }, null, 2);
-}
+  
+    // Concatenate the required data points
+    const fingerprintData = [
+      `userAgent:${navigator.userAgent}`,
+      `language:${navigator.language}`,
+      `screenResolution:${window.screen.width}x${window.screen.height}`,
+      `canvasData:${canvas.toDataURL()}`,
+      `cpuCores:${navigator.hardwareConcurrency || "Unknown"}`,
+      `timeZone:${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+    ].join("||");
+  
+    // Generate a hash from the fingerprint data using the djb2 algorithm
+    const hashedValue = djb2Hash(fingerprintData);
+  
+    // Convert the numeric hash to a base-36 string for a shorter representation
+    return hashedValue.toString(36);
+  }
+  
+  /**
+   * A simple djb2 hash function.
+   * For stronger hashing requirements, consider using the Web Crypto API.
+   */
+  function djb2Hash(str: string): number {
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) + hash) + str.charCodeAt(i);
+    }
+    
+    return hash >>> 0;
+  }
+  
 export function getGPUFingerprint(): string {
     const canvas = document.createElement("canvas");
     const gl = canvas.getContext("webgl") as WebGLRenderingContext || canvas.getContext("experimental-webgl") as WebGLRenderingContext;
@@ -27,14 +47,16 @@ export function getGPUFingerprint(): string {
 }
 
 export function getDeviceInfo() {
-    return JSON.stringify({
+    return {
         userAgent: navigator.userAgent,
         language: navigator.language,
+        platform: navigator.platform,
+        vendor: navigator.vendor,
+        GPU: getGPUFingerprint(),
         screenResolution: `${window.screen.width}x${window.screen.height}`,
-        //canvasData: canvas.toDataURL(),
         cpuCores: navigator.hardwareConcurrency || "Unknown",
         timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    }, null, 2);
+    }
 }
 
 export function getNetworkInfo() {
