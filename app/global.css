@@ -125,6 +125,10 @@ pre::-webkit-scrollbar {
   display: none !important;
 }
 
+.json-display {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+
+}
 pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

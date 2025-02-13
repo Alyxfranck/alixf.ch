@@ -62,10 +62,11 @@ export default function RootLayout({
           
           <Footer />
           <Analytics />
-          <Tracker />
+       
           <SpeedInsights />
         </main>
       </body>
     </html>
   )
 }
+//<Tracker />

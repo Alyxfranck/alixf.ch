@@ -1,5 +1,6 @@
 import MandelbulbSketch from 'app/components/bg-bulb/MandelbulbSketch';
 import ArrowIcon from 'app/components/ArrowIcon';
+import Tracker from './components/tracker';
 export default function Page() {
   return (
     <section>
@@ -13,7 +14,7 @@ export default function Page() {
       </p>
       
      
-
+      <Tracker />
     </section>
   );
 }

